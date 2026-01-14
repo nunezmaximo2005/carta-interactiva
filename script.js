@@ -1,30 +1,40 @@
 const album = [
-    { foto: "foto1.jpg", msj: "Nuestro primer día juntos ❤️", fecha: "2026-01-13" },
-    { foto: "foto2.jpg", msj: "Me encanta tu sonrisa", fecha: "2026-01-14" },
-    { foto: "foto3.jpg", msj: "Eres lo mejor que me ha pasado", fecha: "2026-01-15" }
+    { foto: "foto1.jpg", msj: "Nuestro primer día juntos ❤️", fecha: "2024-01-01" },
+    { foto: "foto2.jpg", msj: "Me encanta tu sonrisa", fecha: "2026-01-14" }
 ];
 
 let indice = 0;
 
 function abrirCarta() {
-    // Inicializar primera foto
+    // 1. Cargamos la primera foto y el mensaje
     document.getElementById('polaroid').src = album[0].foto;
     document.getElementById('texto-trasero').innerText = album[0].msj;
     
-    // Ocultar inicio y mostrar fotos
-    document.getElementById('inicio').classList.add('hidden');
-    const photoContainer = document.getElementById('photo-container');
-    photoContainer.style.display = 'flex';
+    // 2. Ocultamos el título y el sobre (ID inicio)
+    const inicio = document.getElementById('inicio');
+    if (inicio) inicio.classList.add('hidden');
     
-    // Música
-    const musica = document.getElementById('musica');
-    if(musica) musica.play().catch(e => console.log("Esperando interacción para música"));
+    // 3. Mostramos la foto (ID photo-container)
+    const photoContainer = document.getElementById('photo-container');
+    if (photoContainer) {
+        photoContainer.classList.remove('hidden');
+        photoContainer.style.display = 'flex';
+        photoContainer.style.flexDirection = 'column';
+        photoContainer.style.alignItems = 'center';
+    }
+    
+    // 4. Reproducimos tu archivo musica.mp3
+    const cancion = document.getElementById('musica');
+    if (cancion) cancion.play().catch(e => console.log("Error al reproducir música"));
 }
 
 function voltearTarjeta() {
     document.getElementById('card-inner').classList.toggle('flipped');
     document.getElementById('btn-siguiente').style.display = "block";
 }
+
+// ... resto de las funciones cambiarFoto()
+
 
 function cambiarFoto() {
     const ahora = new Date();
@@ -47,3 +57,4 @@ function cambiarFoto() {
         alert("Esta foto se desbloquea el: " + album[indice + 1].fecha);
     }
 }
+
