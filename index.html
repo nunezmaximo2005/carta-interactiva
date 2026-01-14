@@ -6,158 +6,84 @@
     <title>Mi Amor</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Mantenemos tu fondo y animaciones actuales */
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Arial', sans-serif;
-            overflow: hidden;
+            display: flex; justify-content: center; align-items: center;
+            font-family: 'Arial', sans-serif; overflow: hidden;
         }
 
-        .container {
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
+        .container { text-align: center; position: relative; z-index: 10; }
+        h1 { color: white; font-size: 60px; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .subtext { color: #ff4d6d; font-size: 40px; margin-bottom: 20px; }
 
-        h1 {
-            color: white;
-            font-size: 60px;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        /* Estilos del sobre para que aparezca */
+        .envelope-wrapper { cursor: pointer; margin-top: 30px; }
+        .envelope {
+            width: 200px; height: 140px;
+            background: #ffb6c1; border-radius: 0 0 5px 5px;
+            position: relative; margin: 0 auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-
-        .subtext {
-            color: #ff4d6d;
-            font-size: 40px;
-            margin-bottom: 20px;
+        .envelope::before {
+            content: ''; position: absolute; top: -70px; left: 0;
+            border-left: 100px solid transparent; border-right: 100px solid transparent;
+            border-bottom: 70px solid #ffb6c1;
         }
-
-        @keyframes float {
-            to {
-                transform: translateY(-110vh) rotate(360deg);
-            }
-        }
+        .heart-icon { color: #ff4d6d; font-size: 30px; position: absolute; top: 40%; left: 43%; }
 
         .floating-heart {
-            position: absolute;
-            color: rgba(255, 77, 109, 0.4);
-            font-size: 20px;
-            animation: float 5s linear infinite;
-            bottom: -50px;
+            position: absolute; color: rgba(255, 77, 109, 0.4);
+            font-size: 20px; animation: float 5s linear infinite; bottom: -50px;
         }
+        @keyframes float { to { transform: translateY(-110vh) rotate(360deg); } }
 
-        .hidden {
-            display: none !important;
-        }
-
-        #photo-container {
-            perspective: 1000px;
-            margin-top: 20px;
-        }
-
-        .card-inner {
-            width: 280px;
-            height: 350px;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-        }
-
-        .card-inner.flipped {
-            transform: rotateY(180deg);
-        }
-
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            background: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-        }
-
-        .card-back {
-            transform: rotateY(180deg);
-            background: #fffafa;
-            color: #d63384;
-            font-style: italic;
-            text-align: center;
-        }
-
-        #polaroid { 
-            width: 100%; 
-            height: 80%; 
-            object-fit: cover; 
-        }
-
-        #mensaje-guia {
-            color: white;
-            font-size: 16px;
-            margin-top: 20px;
-        }
-
-        #btn-siguiente {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #ff4d6d;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        #btn-siguiente:hover {
-            background-color: #ff1744;
-        }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="main-container">
         <div class="subtext">Te Amo</div>
         <h1>SHIRLEY</h1>
+        
+        <div class="envelope-wrapper" onclick="abrirCarta()">
+            <div class="envelope">
+                <div class="heart-icon">❤️</div>
+            </div>
+            <p style="color: white; margin-top: 20px;">Haz clic en el sobre para abrir</p>
+        </div>
     </div>
 
     <div id="photo-container" class="hidden">
         <div class="card-inner" id="card-inner" onclick="voltearTarjeta()">
             <div class="card-front">
-                <img id="polaroid" src="foto_bloqueada.jpg" alt="Foto">
+                <img id="polaroid" src="foto1.jpg" alt="Foto">
             </div>
             <div class="card-back">
-                <p id="texto-trasero">Aquí irá tu mensaje secreto...</p>
+                <p id="texto-trasero">Cargando mensaje...</p>
             </div>
         </div>
-        <p id="mensaje-guia">Haz clic para ver el mensaje</p>
+        <p id="mensaje-guia">Haz clic en la foto para ver el mensaje</p>
         <button onclick="cambiarFoto()" id="btn-siguiente" style="display:none;">Siguiente Foto</button>
     </div>
 
+    <audio id="musica" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+
     <script src="script.js"></script>
     <script>
+        // Animación de corazones que ya tenías
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('floating-heart');
             heart.innerHTML = '❤️';
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            heart.style.opacity = Math.random();
             document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
+            setTimeout(() => heart.remove(), 5000);
         }
         setInterval(createHeart, 300);
     </script>
