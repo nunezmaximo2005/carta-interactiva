@@ -30,12 +30,12 @@
                 <p id="texto-trasero">Cargando mensaje...</p>
             </div>
         </div>
-        <p id="mensaje-guia" style="color: white;">Haz clic en la foto para leer</p>
-        <button onclick="cambiarFoto()" id="btn-siguiente" style="display:none; margin: 20px auto;">Siguiente Foto</button>
+        <p id="mensaje-guia">Haz clic en la foto para leer</p>
+        <button onclick="cambiarFoto()" id="btn-siguiente" style="display:none;">Siguiente Foto</button>
     </div>
 
-    <div id="album-visto" style="margin-top: 50px; text-align: center; width: 100%;">
-        <h2 style="color: white;">Tus Fotos Desbloqueadas</h2>
+    <div id="album-visto">
+        <h2 style="color: white; text-align: center;">Tus Fotos Desbloqueadas</h2>
         <div id="lista-fotos"></div>
     </div>
 
@@ -45,7 +45,6 @@
 
     <script src="script.js"></script>
     <script>
-        // Animación de corazones
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('floating-heart');
