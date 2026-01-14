@@ -9,8 +9,8 @@ let indice = 0;
 document.addEventListener("DOMContentLoaded", actualizarAlbumVisual);
 
 function abrirCarta() {
-    indice = 0; // Reinicia a la primera foto al tocar el sobre
-    actualizarContenidoTarjeta();
+    indice = 0; 
+    actualizarContenidoTarjeta(); // Llamamos a la función que pone la foto y el número
     
     document.getElementById('inicio').classList.add('hidden');
     const pc = document.getElementById('photo-container');
@@ -24,7 +24,6 @@ function abrirCarta() {
 
 function voltearTarjeta() {
     document.getElementById('card-inner').classList.toggle('flipped');
-    // El botón siguiente solo aparece si hay más fotos en el álbum
     if (indice < album.length - 1) {
         document.getElementById('btn-siguiente').style.display = "block";
     }
@@ -42,7 +41,6 @@ function cambiarFoto() {
     const fechaDisponible = new Date(album[proximo].fecha);
 
     if (ahora >= fechaDisponible) {
-        // Guardar progreso
         let vistas = JSON.parse(localStorage.getItem("fotosVistas") || "[0]");
         if (!vistas.includes(proximo)) vistas.push(proximo);
         localStorage.setItem("fotosVistas", JSON.stringify(vistas));
@@ -51,7 +49,7 @@ function cambiarFoto() {
         document.getElementById('card-inner').classList.remove('flipped');
         
         setTimeout(() => {
-            actualizarContenidoTarjeta();
+            actualizarContenidoTarjeta(); // Actualiza foto y número
             document.getElementById('btn-siguiente').style.display = "none";
             actualizarAlbumVisual();
         }, 400);
@@ -60,9 +58,16 @@ function cambiarFoto() {
     }
 }
 
+// ESTA ES LA FUNCIÓN QUE PONE EL NÚMERO (#1, #2, etc.)
 function actualizarContenidoTarjeta() {
     document.getElementById('polaroid').src = album[indice].foto;
     document.getElementById('texto-trasero').innerText = album[indice].msj;
+    
+    // Aquí es donde sucede la magia del número
+    const nFotoElemento = document.getElementById('n-foto');
+    if (nFotoElemento) {
+        nFotoElemento.innerText = "#" + (indice + 1);
+    }
 }
 
 function actualizarAlbumVisual() {
