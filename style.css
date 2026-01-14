@@ -1,73 +1,33 @@
-/* Estilos Generales y Centrado */
+/* Reemplaza o ajusta estas partes en tu style.css */
 body {
     margin: 0;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column; /* Para que el álbum aparezca debajo */
-    justify-content: center;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
-}
-
-.container {
-    text-align: center;
+    min-height: 100vh; /* Permite que el cuerpo crezca si hay mucho contenido */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start; /* Alinea al inicio para que el scroll funcione bien */
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    overflow-y: auto; /* Habilita el scroll vertical */
 }
 
-h1 { color: white; font-size: 50px; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-.subtext { color: #ff4d6d; font-size: 30px; margin-bottom: 10px; }
-
-/* --- EL SOBRE --- */
-.envelope-wrapper { margin-top: 30px; cursor: pointer; position: relative; }
-.envelope {
-    position: relative; width: 150px; height: 100px;
-    background-color: #ffb6c1; border-radius: 0 0 5px 5px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-.flap {
-    position: absolute; top: 0; left: 0;
-    border-left: 75px solid transparent; border-right: 75px solid transparent;
-    border-top: 60px solid #ff9ead; z-index: 2;
-}
-.body-envelope { position: absolute; width: 100%; height: 100%; background-color: #ffb6c1; z-index: 1; }
-.heart-icon { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); z-index: 3; font-size: 20px; }
-.instruccion { color: white; margin-top: 15px; font-weight: bold; }
-
-/* --- FOTOS Y GIRO 3D --- */
-.hidden { display: none !important; }
-#photo-container { perspective: 1000px; display: none; flex-direction: column; align-items: center; }
-.card-inner {
-    width: 280px; height: 350px; position: relative;
-    transform-style: preserve-3d; transition: transform 0.8s; cursor: pointer;
-}
-.card-inner.flipped { transform: rotateY(180deg); }
-.card-front, .card-back {
-    position: absolute; width: 100%; height: 100%;
-    backface-visibility: hidden; background: white; padding: 15px;
-    border-radius: 5px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    display: flex; align-items: center; justify-content: center; box-sizing: border-box;
-}
-.card-back { transform: rotateY(180deg); color: #d63384; text-align: center; font-style: italic; }
-#polaroid { width: 100%; height: 80%; object-fit: cover; }
-
-/* --- CORAZONES FLOTANTES --- */
-.floating-heart { position: absolute; color: rgba(255, 77, 109, 0.4); animation: float 5s linear infinite; bottom: -50px; }
-@keyframes float { to { transform: translateY(-110vh) rotate(360deg); } }
-
-.miniatura-album {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 5px;
-    border: 2px solid white;
-    cursor: pointer; /* Cambia el cursor a una mano */
-    transition: transform 0.2s;
+.container {
+    width: 100%;
+    max-width: 400px; /* Evita que se estire demasiado en pantallas grandes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.miniatura-album:hover {
-    transform: scale(1.1); /* Se hace un poquito más grande al pasar el mouse/dedo */
+/* Ajuste para las miniaturas del álbum para que siempre se vean centradas */
+#lista-fotos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
 }
