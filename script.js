@@ -44,22 +44,33 @@ function cambiarFoto() {
 }
 
 function actualizarAlbumVisual() {
-    const contenedor = document.getElementById('lista-fotos');
-    if (!contenedor) return;
-    
-    // Obtenemos los índices de las fotos ya desbloqueadas
+    const lista = document.getElementById('lista-fotos');
+    if (!lista) return;
     let vistas = JSON.parse(localStorage.getItem("fotosVistas") || "[0]");
-    contenedor.innerHTML = ""; // Limpiamos para redibujar
-
+    lista.innerHTML = "";
+    
     vistas.forEach(i => {
         const img = document.createElement('img');
         img.src = album[i].foto;
-        img.style.width = "100px";
-        img.style.height = "100px";
-        img.style.objectFit = "cover";
-        img.style.borderRadius = "8px";
-        img.style.border = "3px solid white";
-        img.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
-        contenedor.appendChild(img);
+        img.classList.add("miniatura-album");
+        
+        // ESTO ES LO NUEVO: Al tocar la miniatura, se carga en grande
+        img.onclick = () => {
+            indice = i; // Cambiamos al índice de la foto tocada
+            document.getElementById('card-inner').classList.remove('flipped'); // La ponemos de frente
+            
+            setTimeout(() => {
+                document.getElementById('polaroid').src = album[i].foto;
+                document.getElementById('texto-trasero').innerText = album[i].msj;
+                // Ocultamos el botón siguiente si es una foto vieja para no confundir
+                document.getElementById('btn-siguiente').style.display = "none";
+            }, 400);
+            
+            // Subir suavemente la pantalla para que vea la foto grande
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        
+        lista.appendChild(img);
     });
 }
+
