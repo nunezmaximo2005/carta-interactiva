@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Amor - Shirley</title>
+    <title>Para Shirley</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,22 +35,9 @@
     </div>
 
     <audio id="musica" loop>
-        <source src="cancion.mp3" type="audio/mpeg">
+        <source src="musica.mp3" type="audio/mpeg">
     </audio>
 
     <script src="script.js"></script>
-    <script>
-        // Animación de corazones flotantes
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('floating-heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }
-        setInterval(createHeart, 300);
-    </script>
 </body>
 </html>
