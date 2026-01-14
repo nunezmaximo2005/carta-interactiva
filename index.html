@@ -1,0 +1,66 @@
+<div id="photo-container" class="hidden">
+    <div class="card-inner" id="card-inner" onclick="voltearTarjeta()">
+        <div class="card-front">
+            <img id="polaroid" src="foto_bloqueada.jpg" alt="Foto">
+        </div>
+        <div class="card-back">
+            <p id="texto-trasero">Aquí irá tu mensaje secreto...</p>
+        </div>
+    </div>
+    <p id="mensaje-guia">Haz clic para ver el mensaje</p>
+    <button onclick="cambiarFoto()" id="btn-siguiente" style="display:none;">Siguiente Foto</button>
+</div>
+        .subtext {
+            color: #ff4d6d;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* Animación para que los corazones dentro del texto se muevan */
+        @keyframes moveHearts {
+            from { background-position: 0 0; }
+            to { background-position: 500px 500px; }
+        }
+
+        /* Corazones flotantes de fondo */
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 77, 109, 0.4);
+            font-size: 20px;
+            animation: float 5s linear infinite;
+            bottom: -50px;
+        }
+
+        @keyframes float {
+            to {
+                transform: translateY(-110vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="subtext">Te Amo</div>
+        <h1>SHIRLEY</h1>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.opacity = Math.random();
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>

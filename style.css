@@ -1,0 +1,44 @@
+/* Contenedor de la tarjeta con perspectiva */
+#photo-container {
+    perspective: 1000px;
+    margin-top: 20px;
+}
+
+.card-inner {
+    width: 280px;
+    height: 350px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+/* Clase que aplicaremos con JS para girar */
+.card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara de atrás mientras gira */
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    transform: rotateY(180deg); /* El dorso empieza girado */
+    background: #fffafa;
+    color: #d63384;
+    font-style: italic;
+    text-align: center;
+}
+
+#polaroid { width: 100%; height: 80%; object-fit: cover; }
