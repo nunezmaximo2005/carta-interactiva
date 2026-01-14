@@ -9,10 +9,8 @@ let indice = 0;
 document.addEventListener("DOMContentLoaded", actualizarAlbumVisual);
 
 function abrirCarta() {
-    indice = 0; // Siempre inicia en la primera foto al tocar el sobre
-    document.getElementById('polaroid').src = album[indice].foto;
-    document.getElementById('texto-trasero').innerText = album[indice].msj;
-    document.getElementById('card-inner').classList.remove('flipped');
+    indice = 0; // Reinicia a la primera foto al tocar el sobre
+    actualizarContenidoTarjeta();
     
     document.getElementById('inicio').classList.add('hidden');
     const pc = document.getElementById('photo-container');
@@ -20,13 +18,16 @@ function abrirCarta() {
     pc.classList.remove('hidden');
 
     const musica = document.getElementById('musica');
-    if(musica) musica.play();
+    if(musica) musica.play().catch(() => console.log("Clic necesario para música"));
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function voltearTarjeta() {
-    document.getElementById('card-inner').classList.toggle('flipped'); //
-    document.getElementById('btn-siguiente').style.display = "block";
+    document.getElementById('card-inner').classList.toggle('flipped');
+    // El botón siguiente solo aparece si hay más fotos en el álbum
+    if (indice < album.length - 1) {
+        document.getElementById('btn-siguiente').style.display = "block";
+    }
 }
 
 function cambiarFoto() {
@@ -34,28 +35,34 @@ function cambiarFoto() {
     const proximo = indice + 1;
 
     if (proximo >= album.length) {
-        alert("¡Has visto todas las fotos por ahora!");
+        alert("¡Has llegado al final de las fotos disponibles!");
         return;
     }
 
     const fechaDisponible = new Date(album[proximo].fecha);
 
     if (ahora >= fechaDisponible) {
+        // Guardar progreso
         let vistas = JSON.parse(localStorage.getItem("fotosVistas") || "[0]");
         if (!vistas.includes(proximo)) vistas.push(proximo);
         localStorage.setItem("fotosVistas", JSON.stringify(vistas));
 
         indice = proximo;
         document.getElementById('card-inner').classList.remove('flipped');
+        
         setTimeout(() => {
-            document.getElementById('polaroid').src = album[indice].foto;
-            document.getElementById('texto-trasero').innerText = album[indice].msj;
+            actualizarContenidoTarjeta();
             document.getElementById('btn-siguiente').style.display = "none";
             actualizarAlbumVisual();
         }, 400);
     } else {
         alert("Esta foto se desbloquea el: " + album[proximo].fecha);
     }
+}
+
+function actualizarContenidoTarjeta() {
+    document.getElementById('polaroid').src = album[indice].foto;
+    document.getElementById('texto-trasero').innerText = album[indice].msj;
 }
 
 function actualizarAlbumVisual() {
@@ -72,8 +79,7 @@ function actualizarAlbumVisual() {
             indice = i;
             document.getElementById('card-inner').classList.remove('flipped');
             setTimeout(() => {
-                document.getElementById('polaroid').src = album[i].foto;
-                document.getElementById('texto-trasero').innerText = album[i].msj;
+                actualizarContenidoTarjeta();
                 document.getElementById('btn-siguiente').style.display = "none";
             }, 400);
             window.scrollTo({ top: 0, behavior: 'smooth' });
