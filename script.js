@@ -7,19 +7,18 @@ const album = [
 let indice = 0;
 
 function abrirCarta() {
-    // 1. Inicializar datos
+    // Inicializar primera foto
     document.getElementById('polaroid').src = album[0].foto;
     document.getElementById('texto-trasero').innerText = album[0].msj;
     
-    // 2. Ocultar el inicio y mostrar fotos
+    // Ocultar inicio y mostrar fotos
     document.getElementById('inicio').classList.add('hidden');
     const photoContainer = document.getElementById('photo-container');
-    photoContainer.classList.remove('hidden');
-    photoContainer.classList.add('show-flex'); // Nueva clase para centrar
+    photoContainer.style.display = 'flex';
     
-    // 3. Música
+    // Música
     const musica = document.getElementById('musica');
-    if(musica) musica.play();
+    if(musica) musica.play().catch(e => console.log("Esperando interacción para música"));
 }
 
 function voltearTarjeta() {
@@ -48,4 +47,3 @@ function cambiarFoto() {
         alert("Esta foto se desbloquea el: " + album[indice + 1].fecha);
     }
 }
-
