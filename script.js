@@ -39,11 +39,19 @@ function cambiarFoto() {
 }
 
 function abrirCarta() {
-    // Inicializar la primera foto
+    // Inicializar la primera foto y el mensaje
     document.getElementById('polaroid').src = album[0].foto;
     document.getElementById('texto-trasero').innerText = album[0].msj;
     
-    document.querySelector('.envelope-wrapper').classList.add('hidden');
+    // Ocultamos el título y el sobre
+    document.getElementById('main-container').classList.add('hidden');
+    
+    // Mostramos las fotos
     document.getElementById('photo-container').classList.remove('hidden');
+    
+    // Reproducir música (asegúrate de tener el archivo cancion.mp3)
     document.getElementById('musica').play();
+});
+    document.getElementById('musica').play();
+
 }
