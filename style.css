@@ -94,12 +94,13 @@ h1 { color: white; font-size: 45px; margin: 0; text-shadow: 2px 2px 10px rgba(0,
 .floating-heart { position: absolute; color: rgba(255, 77, 109, 0.4); animation: float 5s linear infinite; bottom: -50px; z-index: 1; }
 @keyframes float { to { transform: translateY(-110vh) rotate(360deg); } 
 #n-foto {
-    font-size: 18px;
+    font-size: 36px;
     color: #333;
     opacity: 0.8;
-    margin-top: 5px;
+    margin-top: 10px;
     /* Esto lo hace ver un poco más hacia la derecha, como las polaroids reales */
     align-self: flex-end; 
     padding-right: 10px;
 }}
+
 
