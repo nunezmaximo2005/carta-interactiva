@@ -44,15 +44,17 @@
     </style>
 </head>
 <body>
-    <div class="container" id="main-container">
+    <div class="container" id="inicio">
         <div class="subtext">Te Amo</div>
         <h1>SHIRLEY</h1>
         
         <div class="envelope-wrapper" onclick="abrirCarta()">
             <div class="envelope">
+                <div class="flap"></div>
+                <div class="body-envelope"></div>
                 <div class="heart-icon">❤️</div>
             </div>
-            <p style="color: white; margin-top: 20px;">Haz clic en el sobre para abrir</p>
+            <p class="instruccion">Toca para abrir mi carta</p>
         </div>
     </div>
 
@@ -65,7 +67,7 @@
                 <p id="texto-trasero">Cargando mensaje...</p>
             </div>
         </div>
-        <p id="mensaje-guia">Haz clic en la foto para ver el mensaje</p>
+        <p id="mensaje-guia">Haz clic en la foto para leer</p>
         <button onclick="cambiarFoto()" id="btn-siguiente" style="display:none;">Siguiente Foto</button>
     </div>
 
@@ -74,18 +76,79 @@
     </audio>
 
     <script src="script.js"></script>
-    <script>
-        // Animación de corazones que ya tenías
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('floating-heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center;     /* Centra verticalmente */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
-        setInterval(createHeart, 300);
-    </script>
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 { color: white; font-size: 50px; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.2); }
+        .subtext { color: #ff4d6d; font-size: 30px; margin-bottom: 10px; }
+
+        /* EL SOBRE */
+        .envelope-wrapper {
+            margin-top: 30px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .envelope {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            background-color: #ffb6c1;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* TAPA DEL SOBRE (CERRADA) */
+        .flap {
+            position: absolute;
+            top: 0; left: 0;
+            border-left: 75px solid transparent;
+            border-right: 75px solid transparent;
+            border-top: 60px solid #ff9ead; /* Color un poco más oscuro */
+            z-index: 2;
+        }
+
+        .body-envelope {
+            position: absolute;
+            width: 100%; height: 100%;
+            background-color: #ffb6c1;
+            z-index: 1;
+        }
+
+        .heart-icon {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            font-size: 20px;
+        }
+
+        .instruccion { color: white; margin-top: 20px; font-weight: bold; }
+        .hidden { display: none !important; }
+
+        /* Ajuste del contenedor de fotos para que también se centre */
+        #photo-container {
+            display: none; /* Se cambia a flex en JS */
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </body>
 </html>
