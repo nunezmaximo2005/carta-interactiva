@@ -1,8 +1,9 @@
 const album = [
-    { foto: "foto1.jpg", msj: "Nuestro primer día juntos ❤️", fecha: "2026-01-14" },
-    { foto: "foto2.jpg", msj: "Me encanta tu sonrisa", fecha: "2026-01-14" },
-    { foto: "foto3.jpg", msj: "Eres lo mejor que me ha pasado", fecha: "2026-01-14" }
+    { foto: "foto1.jpg", msj: "Mensaje 1", fecha: "2020-01-01" },
+    { foto: "foto2.jpg", msj: "Mensaje 2", fecha: "2020-01-01" },
+    { foto: "foto3.jpg", msj: "Mensaje 3", fecha: "2020-01-01" }
 ];
+
 
 let indice = 0;
 
@@ -92,4 +93,5 @@ function actualizarAlbumVisual() {
         lista.appendChild(img);
     });
 }
+
 
