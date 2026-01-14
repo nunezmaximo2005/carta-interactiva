@@ -1,11 +1,10 @@
 body {
     margin: 0;
-    padding: 0;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     height: 100vh;
     display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center;     /* Centrado vertical */
+    justify-content: center;
+    align-items: center;
     font-family: 'Arial', sans-serif;
     overflow: hidden;
 }
@@ -14,43 +13,48 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
-/* El Sobre Cerrado */
-.envelope {
-    position: relative;
-    width: 200px;
-    height: 130px;
-    background-color: #ffb6c1;
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    margin: 20px auto;
-}
+h1 { color: white; font-size: 50px; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.2); }
+.subtext { color: #ff4d6d; font-size: 30px; margin-bottom: 10px; }
 
-/* La tapa del sobre (cerrada) */
+/* EL SOBRE */
+.envelope-wrapper { margin-top: 30px; cursor: pointer; position: relative; }
+.envelope {
+    position: relative; width: 150px; height: 100px;
+    background-color: #ffb6c1; border-radius: 0 0 5px 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 .flap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-top: 70px solid #ff9ead; /* Color un poco más oscuro para notar la tapa */
+    position: absolute; top: 0; left: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-top: 60px solid #ff9ead;
     z-index: 2;
 }
+.body-envelope { position: absolute; width: 100%; height: 100%; background-color: #ffb6c1; z-index: 1; }
+.heart-icon { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); z-index: 3; font-size: 20px; }
+.instruccion { color: white; margin-top: 20px; font-weight: bold; }
 
-.heart-icon {
-    position: absolute;
-    top: 45px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    font-size: 25px;
+/* FOTOS Y GIRO */
+.hidden { display: none !important; }
+#photo-container { perspective: 1000px; display: none; flex-direction: column; align-items: center; }
+.card-inner {
+    width: 280px; height: 350px; position: relative;
+    transform-style: preserve-3d; transition: transform 0.8s; cursor: pointer;
 }
+.card-inner.flipped { transform: rotateY(180deg); }
+.card-front, .card-back {
+    position: absolute; width: 100%; height: 100%;
+    backface-visibility: hidden; background: white; padding: 15px;
+    border-radius: 5px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: flex; align-items: center; justify-content: center; box-sizing: border-box;
+}
+.card-back { transform: rotateY(180deg); color: #d63384; text-align: center; }
+#polaroid { width: 100%; height: 80%; object-fit: cover; }
+#mensaje-guia { color: white; margin-top: 20px; }
 
-.instruccion {
-    color: white;
-    margin-top: 15px;
-    font-weight: bold;
-}
+/* CORAZONES ANIMADOS */
+.floating-heart { position: absolute; color: rgba(255, 77, 109, 0.4); animation: float 5s linear infinite; bottom: -50px; }
+@keyframes float { to { transform: translateY(-110vh) rotate(360deg); } }
