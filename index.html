@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Amor - Shirley</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <div class="container" id="inicio">
         <div class="subtext">Te Amo</div>
@@ -22,7 +30,7 @@
                 <p id="texto-trasero">Cargando mensaje...</p>
             </div>
         </div>
-        <p id="mensaje-guia" style="color: white;">Haz clic para ver el mensaje</p>
+        <p id="mensaje-guia">Haz clic en la foto para leer</p>
         <button onclick="cambiarFoto()" id="btn-siguiente" style="display:none;">Siguiente Foto</button>
     </div>
 
@@ -32,7 +40,7 @@
 
     <script src="script.js"></script>
     <script>
-        // Animación de corazones
+        // Animación de corazones flotantes
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('floating-heart');
@@ -44,29 +52,5 @@
         }
         setInterval(createHeart, 300);
     </script>
-
-    <style>
-        /* Estilos para el Sobre y Centrado */
-        .envelope-wrapper { margin-top: 30px; cursor: pointer; position: relative; z-index: 20; }
-        .envelope {
-            position: relative; width: 150px; height: 100px;
-            background-color: #ffb6c1; border-radius: 0 0 5px 5px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2); margin: 0 auto;
-        }
-        .flap {
-            position: absolute; top: 0; left: 0;
-            border-left: 75px solid transparent; border-right: 75px solid transparent;
-            border-top: 60px solid #ff9ead; z-index: 2;
-        }
-        .body-envelope { position: absolute; width: 100%; height: 100%; background-color: #ffb6c1; z-index: 1; }
-        .heart-icon { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); z-index: 3; font-size: 20px; }
-        .instruccion { color: white; margin-top: 15px; font-weight: bold; }
-        
-        /* Asegurar que el contenedor de fotos se centre al aparecer */
-        #photo-container.show-flex {
-            display: flex !important;
-            flex-direction: column;
-            align-items: center;
-        }
-    </style>
 </body>
+</html>
