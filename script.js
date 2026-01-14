@@ -6,9 +6,24 @@ const album = [
 
 let indice = 0;
 
+function abrirCarta() {
+    // 1. Inicializar datos
+    document.getElementById('polaroid').src = album[0].foto;
+    document.getElementById('texto-trasero').innerText = album[0].msj;
+    
+    // 2. Ocultar el inicio y mostrar fotos
+    document.getElementById('inicio').classList.add('hidden');
+    const photoContainer = document.getElementById('photo-container');
+    photoContainer.classList.remove('hidden');
+    photoContainer.classList.add('show-flex'); // Nueva clase para centrar
+    
+    // 3. Música
+    const musica = document.getElementById('musica');
+    if(musica) musica.play();
+}
+
 function voltearTarjeta() {
     document.getElementById('card-inner').classList.toggle('flipped');
-    // Mostramos el botón "siguiente" solo después de que vea el mensaje
     document.getElementById('btn-siguiente').style.display = "block";
 }
 
@@ -16,18 +31,14 @@ function cambiarFoto() {
     const ahora = new Date();
     const fechaFoto = new Date(album[indice + 1]?.fecha);
 
-    // Si no hay más fotos
     if (indice >= album.length - 1) {
         alert("¡No hay más fotos por ahora! Vuelve mañana.");
         return;
     }
 
-    // Lógica de desbloqueo por fecha
     if (ahora >= fechaFoto) {
         indice++;
         document.getElementById('card-inner').classList.remove('flipped');
-        
-        // Esperamos un poco a que la tarjeta se enderece para cambiar el contenido
         setTimeout(() => {
             document.getElementById('polaroid').src = album[indice].foto;
             document.getElementById('texto-trasero').innerText = album[indice].msj;
@@ -38,20 +49,3 @@ function cambiarFoto() {
     }
 }
 
-function abrirCarta() {
-    // Inicializar contenido
-    document.getElementById('polaroid').src = album[0].foto;
-    document.getElementById('texto-trasero').innerText = album[0].msj;
-    
-    // Ocultar el sobre y el título
-    document.getElementById('inicio').classList.add('hidden');
-    
-    // Mostrar el contenedor de fotos
-    const photoContainer = document.getElementById('photo-container');
-    photoContainer.classList.remove('hidden');
-    photoContainer.style.display = 'flex'; // Forzamos el centrado
-    photoContainer.style.flexDirection = 'column';
-    photoContainer.style.alignItems = 'center';
-    
-    document.getElementById('musica').play();
-}
