@@ -1,7 +1,7 @@
 const album = [
-    { foto: "foto1.jpg", msj: "Mensaje 1", fecha: "2020-01-01" },
-    { foto: "foto2.jpg", msj: "Mensaje 2", fecha: "2020-01-01" },
-    { foto: "foto3.jpg", msj: "Mensaje 3", fecha: "2020-01-01" }
+    { foto: "fotos/foto1.jpg", msj: "La verdad no sabía que foto poner primero, pero creo que esta es una de las primeras que nos sacamos, bastante otaku para mi gusto pero aunque mi cara diga otra cosa, me gustó mucho, hasta la puse de perfil en whatsapp. Espero las próximas sean mejores, te amo shirley", fecha: "2020-01-01" },
+    { foto: "fotos/foto2.jpg", msj: "Mensaje 2", fecha: "2020-01-01" },
+    { foto: "fotos/foto3.jpg", msj: "Mensaje 3", fecha: "2020-01-01" }
 ];
 
 
@@ -93,5 +93,6 @@ function actualizarAlbumVisual() {
         lista.appendChild(img);
     });
 }
+
 
 
