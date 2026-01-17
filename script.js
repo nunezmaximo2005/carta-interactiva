@@ -1,7 +1,7 @@
 const album = [
-    { foto: "fotos/foto1.jpg", msj: "Sinceramente no sabía qué foto poner primero, pero creo que esta es una de las primeras que nos sacamos. Bastante otaku para mi gusto pero, aunque mi cara diga otra cosa, me gustó mucho, hasta la puse de perfil en WhatsApp. Te prometo que las próximas son mejores. Te amo Shirley.", fecha: "2026-01-16" },
-    { foto: "fotos/foto2.jpg", msj: "No me acuerdo del todo el problema que hubo con la cajera del Día (creo que tuvo que ver con un 3x2 o algo parecido), pero sí me acuerdo que me dio mucha risa. Esta no es de mis favoritas, pero sí es muy linda. Qué lástima no tener más la pulsera (todavía me acuerdo el día que se rompió, volaron todas las pelotitas a la mierda), y qué bueno que hayas sacado la foto.", fecha: "2026-01-17" },
-    { foto: "fotos/foto3.jpg", msj: "Mensaje 3", fecha: "2026-01-18" }
+    { foto: "fotos/foto1.jpg", msj: "Sinceramente no sabía qué foto poner primero, pero creo que esta es una de las primeras que nos sacamos. Bastante otaku para mi gusto pero, aunque mi cara diga otra cosa, me gustó mucho, hasta la puse de perfil en WhatsApp. Te prometo que las próximas son mejores. Te amo Shirley.", fecha: "2026/01/16" },
+    { foto: "fotos/foto2.jpg", msj: "No me acuerdo del todo el problema que hubo con la cajera del Día (creo que tuvo que ver con un 3x2 o algo parecido), pero sí me acuerdo que me dio mucha risa. Esta no es de mis favoritas, pero sí es muy linda. Qué lástima no tener más la pulsera (todavía me acuerdo el día que se rompió, volaron todas las pelotitas a la mierda), y qué bueno que hayas sacado la foto.", fecha: "2026/01/17" },
+    { foto: "fotos/foto3.jpg", msj: "Mensaje 3", fecha: "2026/01/18" }
 ];
 
 
@@ -93,6 +93,7 @@ function actualizarAlbumVisual() {
         lista.appendChild(img);
     });
 }
+
 
 
 
