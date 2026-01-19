@@ -2,7 +2,9 @@ const album = [
     { foto: "fotos/foto1.jpg", msj: "Sinceramente no sabía qué foto poner primero, pero creo que esta es una de las primeras que nos sacamos. Bastante otaku para mi gusto pero, aunque mi cara diga otra cosa, me gustó mucho, hasta la puse de perfil en WhatsApp. Te prometo que las próximas son mejores. Te amo Shirley.", fecha: "2026/01/16" },
     { foto: "fotos/foto2.jpg", msj: "No me acuerdo del todo el problema que hubo con la cajera del Día (creo que tuvo que ver con un 3x2 o algo parecido), pero sí me acuerdo que me dio mucha risa. Esta no es de mis favoritas, pero sí es muy linda. Qué lástima no tener más la pulsera (todavía me acuerdo el día que se rompió, volaron todas las pelotitas a la mierda), y qué bueno que hayas sacado la foto.", fecha: "2026/01/17" },
     { foto: "fotos/foto3.jpg", msj: "Probablemente no me hubiera sacado esta foto con nadie más. Cuando la subiste a tu estado me gustó mucho, más allá de que te hayas burlado de lo que mi mamá decía de la foto donde tenía los labios rojos \"mmmm pareces putísimo\". Esta si es de mis favoritas. Te amo mucho preciosa ❤️, y espero que estés teniendo una linda noche.", fecha: "2026/01/18" },
-    { foto: "fotos/foto4.jpg", msj: "Mensaje 3", fecha: "2026/01/19" },
+    { foto: "fotos/foto4.jpg", msj: "Esta foto creo que es de cuando volviamos de lo de Julia. Ahí se ve el piercing de la ceja pero el que más me gustaba era el del labio (tus labios me gustan mucho). En esa época vivías cerca y tomábamos tereré a cada rato. La noche de hoy está para hablar de cualquier cosa y tomar tereré hasta que te estés re meando. Te extraño mucho Shirley, quiero tenerte cerca, hablar mientras veo los hermosos ojos que tenés, ver películas juntos, quiero todo junto a vos. Te amo y te extraño mucho mucho", fecha: "2026/01/19" },
+    { foto: "fotos/foto5.jpg", msj: "Mensaje 3", fecha: "2026/01/20" },
+
 
 ];
 
@@ -95,6 +97,7 @@ function actualizarAlbumVisual() {
         lista.appendChild(img);
     });
 }
+
 
 
 
