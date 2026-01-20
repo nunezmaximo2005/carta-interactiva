@@ -3,7 +3,7 @@ const album = [
     { foto: "fotos/foto2.jpg", msj: "No me acuerdo del todo el problema que hubo con la cajera del Día (creo que tuvo que ver con un 3x2 o algo parecido), pero sí me acuerdo que me dio mucha risa. Esta no es de mis favoritas, pero sí es muy linda. Qué lástima no tener más la pulsera (todavía me acuerdo el día que se rompió, volaron todas las pelotitas a la mierda), y qué bueno que hayas sacado la foto.", fecha: "2026/01/17" },
     { foto: "fotos/foto3.jpg", msj: "Probablemente no me hubiera sacado esta foto con nadie más. Cuando la subiste a tu estado me gustó mucho, más allá de que te hayas burlado de lo que mi mamá decía de la foto donde tenía los labios rojos \"mmmm pareces putísimo\". Esta si es de mis favoritas. Te amo mucho preciosa ❤️, y espero que estés teniendo una linda noche.", fecha: "2026/01/18" },
     { foto: "fotos/foto4.jpg", msj: "Esta foto creo que es de cuando volviamos de lo de Julia. Ahí se ve el piercing de la ceja pero el que más me gustaba era el del labio (tus labios me gustan mucho). En esa época vivías cerca y tomábamos tereré a cada rato. La noche de hoy está para hablar de cualquier cosa y tomar tereré hasta que te estés re meando. Te extraño mucho Shirley, quiero tenerte cerca, hablar mientras veo los hermosos ojos que tenés, ver películas juntos, quiero todo junto a vos. Te amo y te extraño mucho mucho", fecha: "2026/01/19" },
-    { foto: "fotos/foto5.jpg", msj: "Estoy subiendo medio tarde esto (me dormí), pero quiero que sepas que la salida de ayer me gustó muchísimo, me hubiera gustado quedarme mucho más. Al menos ayer pudimos comer las hamburguesas sin ensuciarnos tanto como en la foto (todavía no entiendo como hicimos para ensuciarnos tanto). La canción de hoy la escuchaba todo contento casi siempre antes de salir. Medio pedorro el mensaje de hoy pero bueno. Te amo mucho Shirley, y espero poder verte de vuelta (estaría bueno llevar yerba y ponerme una remera sana para la próxima).", fecha: "2026/01/20" },
+    { foto: "fotos/foto5.jpg", msj: "Estoy subiendo medio tarde esto (me dormí), la salida de ayer me gustó muchísimo y me hubiera gustado quedarme mucho más. Al menos ayer pudimos comer las hamburguesas sin ensuciarnos tanto como en la foto. La canción de hoy la escuchaba todo contento casi siempre antes de salir. Medio pedorro el mensaje de hoy pero bueno. Te amo mucho Shirley, y espero poder verte de vuelta.", fecha: "2026/01/20" },
     { foto: "fotos/foto5.jpg", msj: "espero nunca veas esto (no deberias)", fecha: "2026/01/21" },
     { foto: "fotos/foto5.jpg", msj: "Mensaje 3", fecha: "2026/01/22" },
 
@@ -99,6 +99,7 @@ function actualizarAlbumVisual() {
         lista.appendChild(img);
     });
 }
+
 
 
 
