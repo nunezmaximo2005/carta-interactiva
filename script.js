@@ -6,7 +6,10 @@ const album = [
     { foto: "fotos/foto5.jpg", msj: "Estoy subiendo medio tarde esto (me dormí), la salida de ayer me gustó muchísimo y me hubiera gustado quedarme mucho más. Al menos ayer pudimos comer las hamburguesas sin ensuciarnos tanto como en la foto. La canción de hoy la escuchaba todo contento casi siempre antes de salir. Medio pedorro el mensaje de hoy pero bueno. Te amo mucho Shirley, y espero poder verte de vuelta.", fecha: "2026/01/20" },
     { foto: "fotos/foto6.jpg", msj: "Me encanta lo sonriente que salís en la foto y el cómo te miro, no entiendo qué hago de brazos cruzados, te tendría que haber agarrado de la cintura. Hablando de eso, creo que nos abrazamos cerca de la escalera ese día, no estoy seguro, estaba medio en pedo. Es raro que Gonza sonría en las fotos, ahora siempre sale serio (le debe sumar aura). Hay más cosas, pero si escribo más se salen del recuadro. Te amo preciosa, y espero que vengas bien con el estudio.", fecha: "2026/01/21" },
     { foto: "fotos/foto7.jpg", msj: "Nunca me llamaron mucho la atención las convenciones, me gustaba el anime, pero nunca lo suficiente como para comprar algo relacionado o ir a ver gente disfrazada. Probablemente ese día me gustó ir porque ibas vos, siempre que estás vos la suelo pasar bien. Hoy extraño mucho tu risa, y me arrepiento de no haberte dicho que te amo la vez que te vi, al menos al despedirme. Creo que siempre siento que podría dar algo más, mostrarte más lo mucho que te amo.", fecha: "2026/01/22" },
-    { foto: "fotos/foto8.jpg", msj: "Nunca me llamaron mucho la atención las convenciones, me gustaba el anime, pero nunca lo suficiente como para comprar algo relacionado o ir a ver gente disfrazada. Probablemente ese día me gustó ir porque ibas vos, siempre que estás vos la suelo pasar bien. Me preocupa que hayas sacado la foto de WhatsApp, solo espero que no estés triste o hayas tenido un mal día. Hoy extraño mucho tu risa, me encanta hacerte reír tanto que tengas que dejar de caminar para parar, y me arrepiento de no haberte dicho que te amo la vez que te vi, al menos al momento de despedirme. Creo que siempre siento que podría dar algo más, mostrarte más lo mucho que te amo.", fecha: "2026/01/23" },
+    { foto: "fotos/foto8.jpg", msj: "La flor esta es rarísima y su nombre también (Passiflora caerulea), no hay mucho para decir de la foto, pero siempre me gustó que me dieras cosas, porque significa que pensaste en mí, como la vez que me diste esa flor con una perla. Espero que no estés tan estresada con el estudio, es bastante feo llorar porque no te sale algo, de igual forma sé que sos muy inteligente y perseverante, unos aspectos que admiro mucho. Estoy seguro de que vas a aprobar. Te amo Shirley", fecha: "2026/01/23" },
+    { foto: "fotos/foto9.jpg", msj: "", fecha: "2026/01/24" },
+    { foto: "fotos/foto10.jpg", msj: "", fecha: "2026/01/25" },
+    { foto: "fotos/foto11.jpg", msj: "", fecha: "2026/01/26" },
 
 
 ];
@@ -100,6 +103,7 @@ function actualizarAlbumVisual() {
         lista.appendChild(img);
     });
 }
+
 
 
 
