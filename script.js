@@ -9,7 +9,10 @@ const album = [
     { foto: "fotos/foto8.jpg", msj: "La flor esta es rarísima y su nombre también (Passiflora caerulea), no hay mucho para decir de la foto, pero siempre me gustó que me dieras cosas, porque significa que pensaste en mí, como la vez que me diste esa flor con una perla. Espero que no estés tan estresada con el estudio, es bastante feo llorar porque no te sale algo, de igual forma sé que sos muy inteligente y perseverante, unos aspectos que admiro mucho. Estoy seguro de que vas a aprobar. Te amo Shirley", fecha: "2026/01/23" },
     { foto: "fotos/foto9.jpg", msj: "Más de una vez pensé en estar así como en la foto: despertarme y verte hasta el momento en que me duermo, compartir un espacio, construir ese espacio juntos, vivir experiencias juntos. Experiencias que podría hacer solo, pero que sé que con una tan buena compañera como vos serían mejores. Te extraño Shirley, extraño esos mensajes que llegaban de la nada a sacarme una sonrisa, que me cuentes tu dia, que te quejes del calor que hace o contarnos chisme de Gonza y Cami, que me recomiendes películas que espero en algún momento ver, y el mensaje de buenas noches que siempre quiero alargar para hablar un rato más. Extraño decirte que te amo, creo que se volvió algo necesario para mí. Supongo que hoy vas a estar muy cansada, espero que puedas descansar bien y no te despiertes con dolor en el cuerpo o alguna molestia. Buenas noches Shirley, te amo mucho.", fecha: "2026/01/24" },
     { foto: "fotos/foto10.jpg", msj: "Todavía no sé cómo no me decías lo mal que me quedaba el corte de pelo, y esas cejas que me hacían parecer un dibujito. Ese fue el día que conocí a tu mamá y fue uno de mis días favoritos, ese día también quedamos en vernos el 14 de febrero (algo que por alguna razón significaba mucho para mí). Me hubiera gustado quedarme a comer ese día, ni me acuerdo porqué me volví. También me acuerdo que después de volver a mi casa me mandaste para jugar al Free Fire, estabas muy viciada a ese juego y todavía me acuerdo cuando me dijiste: 'Jugás muy lindo'. Dejando eso de lado, espero que las cosas vuelvan a ser como antes. Extraño mucho hablar con vos, saber cómo estás, decirte cosas cursis. No sé, creo que a este punto me gustaría recibir cualquier mensaje (hasta llegué a soñar que me llegaban unos). Te amo Shirley, y te extraño cada vez más.", fecha: "2026/01/25" },
-    { foto: "fotos/foto11.jpg", msj: "", fecha: "2026/01/26" },
+    { foto: "fotos/foto11.jpg", msj: "Esta foto es de cuando fuimos al cine a ver La Monja (una porquería de película, si me preguntás). Me gusta mucho cómo tenés el pelo en esta foto, no sé, tu cara se ve más despejada. También hay un video donde hacés caras, todas hermosas. Anoche la pasé muy bien, se me pasó muy rápido todo, aunque no fue tan graciosa como la de la otra vez (capaz me gusta más que te rías por lo que digo y no por reventarme con un cartel). La verdad no sé qué escribir, creo que me sale mejor escribir de noche. Quería abrazarte antes de irme, pero creo que para esas cosas siempre me va a costar tomar la iniciativa (creo que es más que nada por miedo a sentirme rechazado). Al menos esta vez sí te dije que te amo. Te amo mucho mucho y la paso muy bien con vos (te me estás haciendo muy tierna ultimamente). ❤️TRATÁ DE NO TIRARTE DE UN BALCÓN❤️.", fecha: "2026/01/26" },
+    { foto: "fotos/foto12.jpg", msj: "", fecha: "2026/01/27" },
+    { foto: "fotos/foto13.jpg", msj: "", fecha: "2026/01/28" },
+    { foto: "fotos/foto14.jpg", msj: "", fecha: "2026/01/29" },
 
 
 ];
@@ -103,6 +106,7 @@ function actualizarAlbumVisual() {
         lista.appendChild(img);
     });
 }
+
 
 
 
